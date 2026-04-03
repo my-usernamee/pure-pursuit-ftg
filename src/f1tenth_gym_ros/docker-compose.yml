@@ -20,13 +20,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-version: '3'
 services:
   sim:
     image: f1tenth_gym_ros
     build: ./
     volumes: 
-      - .:/sim_ws/src/f1tenth_gym_ros
+      - ../..:/sim_ws
     environment:
       - DISPLAY=novnc:0.0
     networks:

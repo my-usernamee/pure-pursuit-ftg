@@ -97,6 +97,58 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Alpha: 1
+      Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: RacingLine
+      Namespaces:
+        static_path: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /full_track_path
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: LookaheadPoint
+      Namespaces:
+        lookahead_point: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /waypoint_markers
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Obstacle
+      Namespaces:
+        obstacle: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /obstacle_marker
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: OpponentDetection
+      Namespaces:
+        opponent: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /opponent_marker
+      Value: true
+    - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
       Description File: ""
@@ -153,6 +205,67 @@ Visualization Manager:
           Show Trail: false
           Value: true
       Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /opp_robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        opp_racecar/back_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        opp_racecar/back_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        opp_racecar/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        opp_racecar/front_left_hinge:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        opp_racecar/front_left_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        opp_racecar/front_right_hinge:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        opp_racecar/front_right_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        opp_racecar/laser_model:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: OppRobotModel
       TF Prefix: ""
       Update Interval: 0
       Value: true

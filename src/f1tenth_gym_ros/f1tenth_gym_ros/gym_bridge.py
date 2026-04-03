@@ -358,6 +358,7 @@ class GymBridge(Node):
             opp_ts.child_frame_id = self.opp_namespace + '/base_link'
             self.br.sendTransform(opp_ts)
 
+
     def _publish_wheel_transforms(self, ts):
         ego_wheel_ts = TransformStamped()
         ego_wheel_quat = euler.euler2quat(0., 0., self.ego_steer, axes='sxyz')

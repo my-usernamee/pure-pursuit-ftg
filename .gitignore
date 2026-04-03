@@ -1,7 +1,30 @@
+# ROS 2 / colcon artifacts
 build/
 install/
 log/
-.vscode/
+
+# Python
 __pycache__/
-*.pyc
+**/__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+.eggs/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environments
+.venv/
+.env
+
+# OS files
 .DS_Store
+
+# Legacy nested git backups
+**/.git_old/

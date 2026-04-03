@@ -61,17 +61,30 @@ class PurePursuitLogic:
                 longest_dist = dist
                 final_i = i
 
-        # Fallback Logic: If no point found in the local window, return the last known index
+        # Fallback Logic: If no point found in the local window, choose a nearby
+        # waypoint and march forward on the raceline until we find one in front.
+        # This prevents the car from getting stuck at startup with zero commands.
         if final_i != -1:
             self.current_idx = final_i
         else:
             distances = np.linalg.norm(self.waypoints[:, :2] - np.array([car_x, car_y]), axis=1)
-            # Find indices where point is in front
-            for i in np.argsort(distances): # Check points starting from the closest
-                p_car = self.transform_point_to_car_frame(car_x, car_y, car_yaw, self.waypoints[i, :2])
-                if p_car[0] > 0: # If it's in front, snap to it
-                    final_i = i
+            nearest_i = int(np.argmin(distances))
+            final_i = nearest_i
+
+            # Check a short forward horizon on the raceline for an in-front point.
+            for offset in range(1, min(30, self.num_waypoints)):
+                candidate_i = (nearest_i + offset) % self.num_waypoints
+                p_car = self.transform_point_to_car_frame(
+                    car_x, car_y, car_yaw, self.waypoints[candidate_i, :2]
+                )
+                if p_car[0] > 0:
+                    final_i = candidate_i
                     break
+
+            self.current_idx = final_i
+            longest_dist = np.linalg.norm(
+                self.waypoints[final_i, :2] - np.array([car_x, car_y])
+            )
 
         target_pt_car = self.transform_point_to_car_frame(car_x, car_y, car_yaw, self.waypoints[final_i, :2])
         return target_pt_car, longest_dist, final_i
