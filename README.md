@@ -72,7 +72,7 @@ It compares center changes across frames, smooths velocity, and requires persist
 File:
 - `src/state_machine/state_machine/opponent_detector.py`
 
-### Q7) How is overtaking done?
+### Q5) How is overtaking done?
 
 Overtake is rule-based:
 - detect opponent ahead and close
