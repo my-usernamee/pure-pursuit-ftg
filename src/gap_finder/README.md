@@ -1,19 +1,15 @@
-# gap_finder (Legacy Package)
+# gap_finder (Legacy)
 
-This folder is legacy coursework/experiments and is **not** the main runtime path of this repo.
+This package is legacy coursework/experiments and is not the active runtime path for this project.
 
-## Important
+## Active Runtime Path
 
-The current project behavior you are running (pure pursuit + FTG + opponent detection) does **not** depend on `wall_follow` here.
+Use these instead:
+- `scripts/start_racetrack.sh`
+- `src/pure_pursuit/`
+- `src/state_machine/`
+- `src/f1tenth_gym_ros/`
 
-Main runtime is from:
-- `/Users/hari/Desktop/f1tenth_ws/scripts/start_racetrack.sh`
-- `/Users/hari/Desktop/f1tenth_ws/src/pure_pursuit/`
-- `/Users/hari/Desktop/f1tenth_ws/src/state_machine/`
-- `/Users/hari/Desktop/f1tenth_ws/src/f1tenth_gym_ros/`
+## Note
 
-## Why This README Was Replaced
-
-Old wall-follow lab content and long theory/equation notes were removed from README because they are not needed for this project workflow.
-
-If you still want wall-follow experiments, keep the code in this folder, but treat it as separate from the active stack.
+`wall_follow` in this package is not part of the default launch flow.
