@@ -1,20 +1,10 @@
-# f1tenth_gym_ros (Bridge Package)
+# f1tenth_gym_ros Package
 
-This package bridges simulator state to ROS topics.
+Use this package for simulator bridge + map/topic setup.
 
-## Edit Here
-
-- Map, topics, spawn points, agent count: `config/sim.yaml`
-- Bridge publish/subscribe logic: `f1tenth_gym_ros/gym_bridge.py`
-- Sim containers: `docker-compose.yml`
-- RViz config: `launch/gym_bridge.rviz`
-
-## Project Launch
-
-Use root scripts:
-
-```bash
-bash scripts/start_racetrack.sh
-bash scripts/status_racetrack.sh
-bash scripts/stop_racetrack.sh
-```
+Exact files to tweak:
+- Map path, spawn points, agent count, topic names: `config/sim.yaml`
+- Bridge publish/subscribe behavior: `f1tenth_gym_ros/gym_bridge.py`
+- Docker services for sim/noVNC: `docker-compose.yml`
+- Launch file: `launch/gym_bridge_launch.py`
+- RViz layout: `launch/gym_bridge.rviz`

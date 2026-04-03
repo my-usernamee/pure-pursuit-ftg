@@ -1,15 +1,12 @@
-# gap_finder (Legacy)
+# gap_finder Package (Legacy)
 
-This package is legacy coursework/experiments and is not the active runtime path for this project.
+This package is legacy and not used by default runtime launch.
 
-## Active Runtime Path
+Exact file (if you still want to tweak legacy behavior):
+- `gap_finder/gap_finder_node.py`
 
-Use these instead:
+Main runtime for this project uses:
 - `scripts/start_racetrack.sh`
 - `src/pure_pursuit/`
 - `src/state_machine/`
 - `src/f1tenth_gym_ros/`
-
-## Note
-
-`wall_follow` in this package is not part of the default launch flow.
