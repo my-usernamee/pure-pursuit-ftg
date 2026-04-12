@@ -13,10 +13,9 @@ if [[ -n "${SIM_CONTAINER_ID}" ]]; then
   docker exec "${SIM_CONTAINER_ID}" bash -lc \
     "for PID_FILE in \
       /tmp/f1tenth_controller_manager.pid \
-      /tmp/f1tenth_opp_controller_manager.pid \
       /tmp/f1tenth_state_machine.pid \
-      /tmp/f1tenth_opponent_detector.pid \
-      /tmp/f1tenth_autodrive.pid \
+      /tmp/f1tenth_obstacle_detector.pid \
+      /tmp/f1tenth_local_planner.pid \
       /tmp/f1tenth_launch.pid; do \
       if [[ -f \"\${PID_FILE}\" ]]; then \
         PID=\$(cat \"\${PID_FILE}\"); \
@@ -29,4 +28,4 @@ fi
 echo "Stopping Docker services..."
 docker compose down
 
-echo "Race track stopped."
+echo "Race stack stopped."

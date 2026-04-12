@@ -22,9 +22,8 @@ if [[ -n "${SIM_CONTAINER_ID}" ]]; then
     "for NAME in \
       f1tenth_launch \
       f1tenth_state_machine \
+      f1tenth_local_planner \
       f1tenth_controller_manager \
-      f1tenth_opp_controller_manager \
-      f1tenth_opponent_detector \
       f1tenth_obstacle_detector; do \
       PID_FILE=\"/tmp/\${NAME}.pid\"; \
       if [[ -f \"\${PID_FILE}\" ]]; then \

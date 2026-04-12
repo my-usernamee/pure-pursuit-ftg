@@ -1,7 +1,10 @@
 # pure_pursuit Package
 
-Exact files to tweak:
-- FTG behavior: `pure_pursuit/ftg_logic.py`
-- Raceline target/steering logic: `pure_pursuit/pure_pursuit_logic.py`
-- Mode handling + overtake logic: `pure_pursuit/controller_manager.py`
-- Raceline data: `racelines/*.csv`
+Main files:
+- Multi-state controller manager: `pure_pursuit/controller_manager.py`
+- Modified pure pursuit for GB/OVERTAKE: `pure_pursuit/pure_pursuit_logic_modified.py`
+- Frenet helper for track-relative logic: `pure_pursuit/frenet_converter.py`
+
+Racelines:
+- `racelines/korea_mintime_sparse.csv`
+- `racelines/korea_centerline.csv`

@@ -1,6 +1,13 @@
 # state_machine Package
 
-Exact files to tweak:
-- State transitions (`GB_TRACK` / `FTGONLY`): `state_machine/state_machine.py`
-- Opponent detection and tracking: `state_machine/opponent_detector.py`
-- Basic front obstacle detector: `state_machine/obstacle_detector.py`
+Main files:
+- State transitions and RViz state legend: `state_machine/state_machine.py`
+- State enum: `state_machine/drive_state.py`
+- Dynamic opponent detector/tracker: `state_machine/opponent_detector.py`
+- Static front obstacle detector: `state_machine/obstacle_detector.py`
+
+Published state topic:
+- `/state`
+
+RViz marker topic:
+- `/state_marker` (MarkerArray)
